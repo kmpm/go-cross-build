@@ -9,6 +9,10 @@ description: 'Generates cross-platform executable files from a Go module.'
 
 # action input values
 inputs:
+  version:
+    description: 'Go version to use for the build.'
+    default: 'latest'
+    required: false
   platforms:
     description: 'Comma-separated list of "<kernel>/<arch>" combinations.'
     default: 'linux/386,linux/amd64'
@@ -40,6 +44,8 @@ runs:
   image: 'Dockerfile'
   env:
     GO111MODULE: 'on'
+  args:
+    - GOLANG_VERSION: ${{ inputs.version }}
 
 # branding
 branding:

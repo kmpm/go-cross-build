@@ -1,4 +1,5 @@
 # Debian GNU/Linux 10 (1.13.10-buster)
+ARGS GOLANG_VERSION=1.16
 FROM golang:1.16-buster
 
 # copy entrypoint file
